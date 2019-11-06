@@ -1,0 +1,1 @@
+Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=GvcSportsBetting;Trusted_Connection=True;MultipleActiveResultSets=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Model -Tables SportEvents

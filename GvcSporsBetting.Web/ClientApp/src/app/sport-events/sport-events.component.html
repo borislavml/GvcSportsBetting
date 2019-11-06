@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 offset-md-10">
+      <button class="float-right btn btn-primary" (click)="switchMode()"> {{ switchButtontext }}</button>
+    </div>
+  </div>
+  <h2 class="text-center">Sport Events</h2>
+  <p *ngIf="!sportEvents"><em>Loading...</em></p>
+
+  <div *ngIf="previewMode">
+    <table class='table table-bordered' *ngIf="sportEvents">
+      <thead>
+        <tr>
+          <th>EventName</th>
+          <th>OdsForFirstTeam</th>
+          <th>OdsForDrow</th>
+          <th>OdsForSecondTeam</th>
+          <th>EventStartDate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sportEvent of sportEvents" [ngClass]="{'expired-event' : eventHasPassed(sportEvent.eventStartDate) }">
+          <td>{{ sportEvent.eventName || 'N/A' }}</td>
+          <td (click)="showOdd(sportEvent.sportEventId, OddType.FirstTeam )">{{ sportEvent.oddsForFirstTeam || 'N/A'}}</td>
+          <td (click)="showOdd(sportEvent.sportEventId, OddType.Drow )">{{ sportEvent.oddsForDraw || 'N/A' }}</td>
+          <td (click)="showOdd(sportEvent.sportEventId, OddType.SecondTeam )">{{ sportEvent.oddsForSecondTeam || 'N/A'}}</td>
+          <td>{{ sportEvent.eventStartDate | date:'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="edit-sport-events" *ngIf="editMode">
+    <div class="grid-table">
+      <div class="thead">
+        <div class="tr">
+          <div class="td">EventID</div>
+          <div class="td">EventName</div>
+          <div class="td">OdsForFirstTeam</div>
+          <div class="td">OdsForDrow</div>
+          <div class="td">OdsForSecondTeam</div>
+          <div class="td">EventStartDate</div>
+          <div class="td">
+            <span *ngIf="notification" class="elementToFadeInAndOut {{notification.class}}">
+              {{notification.message}}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="tbody">
+        <form class="tr" [formGroup]="fg" *ngFor="let fg of sportEventsForms.controls; let i=index;">
+          <div class="td" style="width: 5%;">
+            <input class="form-control" formControlName="sportEventId" [readonly]="true">
+          </div>
+          <div class="td" style="width: 20%;">
+            <input class="form-control" formControlName="eventName" required>
+          </div>
+          <div class="td" style="width: 10%;">
+            <input class="form-control" type="number" min="1.0" step="0.1" formControlName="oddsForFirstTeam">
+          </div>
+          <div class="td" style="width: 10%;">
+            <input class="form-control" type="number" min="1.0" step="0.1" formControlName="oddsForDraw">
+          </div>
+          <div class="td" style="width: 10%;">
+            <input class="form-control" type="number" min="1.0" step="0.1" formControlName="oddsForSecondTeam">
+          </div>
+          <div class="td" style="width: 20%;">
+            <input class="form-control" type="datetime-local" formControlName="eventStartDate" required />
+          </div>
+          <div class="td" style="width: 20%;">
+            <div class="btn-group">
+              <div class="col-md-6" style="padding: 0px !important">
+                <button type="submit" class="btn-success btn-sm" (click)="updateSportEvent(fg.get('sportEventId').value, fg)" [disabled]="fg.invalid">Edit</button>
+              </div>
+              <div class="col-md-6" style="padding: 0px !important">
+                <button class="btn btn-danger btn-danger btn-sm" (click)="deleteSportEvent(fg.get('sportEventId').value,i)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <button class="float-left btn btn-primary" style="margin: 5px;" (click)="addDefaultSportEvents()"> Add New</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+

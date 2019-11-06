@@ -1,0 +1,10 @@
+C:\Users\boris\Desktop\GVC_Solution\GvcSporsBetting\GvcSporsBetting.DataAccess\bin\Debug\netcoreapp3.0\GvcSporsBetting.DataAccess.deps.json
+C:\Users\boris\Desktop\GVC_Solution\GvcSporsBetting\GvcSporsBetting.DataAccess\bin\Debug\netcoreapp3.0\GvcSporsBetting.DataAccess.dll
+C:\Users\boris\Desktop\GVC_Solution\GvcSporsBetting\GvcSporsBetting.DataAccess\obj\Debug\netcoreapp3.0\GvcSporsBetting.DataAccess.csprojAssemblyReference.cache
+C:\Users\boris\Desktop\GVC_Solution\GvcSporsBetting\GvcSporsBetting.DataAccess\obj\Debug\netcoreapp3.0\GvcSporsBetting.DataAccess.AssemblyInfoInputs.cache
+C:\Users\boris\Desktop\GVC_Solution\GvcSporsBetting\GvcSporsBetting.DataAccess\obj\Debug\netcoreapp3.0\GvcSporsBetting.DataAccess.AssemblyInfo.cs
+C:\Users\boris\Desktop\GVC_Solution\GvcSporsBetting\GvcSporsBetting.DataAccess\bin\Debug\netcoreapp3.0\GvcSporsBetting.DataAccess.runtimeconfig.json
+C:\Users\boris\Desktop\GVC_Solution\GvcSporsBetting\GvcSporsBetting.DataAccess\bin\Debug\netcoreapp3.0\GvcSporsBetting.DataAccess.runtimeconfig.dev.json
+C:\Users\boris\Desktop\GVC_Solution\GvcSporsBetting\GvcSporsBetting.DataAccess\bin\Debug\netcoreapp3.0\GvcSporsBetting.DataAccess.pdb
+C:\Users\boris\Desktop\GVC_Solution\GvcSporsBetting\GvcSporsBetting.DataAccess\obj\Debug\netcoreapp3.0\GvcSporsBetting.DataAccess.dll
+C:\Users\boris\Desktop\GVC_Solution\GvcSporsBetting\GvcSporsBetting.DataAccess\obj\Debug\netcoreapp3.0\GvcSporsBetting.DataAccess.pdb
