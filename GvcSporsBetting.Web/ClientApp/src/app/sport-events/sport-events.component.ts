@@ -93,7 +93,7 @@ export class SportEventsComponent implements OnInit {
         this.sportEventsService.GetAllForPreview().subscribe(res => {
             this.sportEvents = <SportEvent[]>res;
             this.sportEventsForms = this.fb.array([]);
-            (res as []).forEach((se: any) => {
+            (res as any[]).forEach((se: any) => {
                 this.sportEventsForms.push(this.fb.group({
                     sportEventId: [se.sportEventId, Validators.required],
                     eventName: [se.eventName, Validators.required],
